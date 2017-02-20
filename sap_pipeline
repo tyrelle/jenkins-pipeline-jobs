@@ -1,0 +1,42 @@
+node {
+  stage 'Build'
+      echo 'Reading config files'
+      sh 'sleep 5s'
+
+
+  stage 'Unit Tests'
+    parallel (
+      "eCatt Tests": {
+        echo 'eCatt tests'
+        sh "sleep 5s"
+      },
+      "SOAP UI Tests": {
+        echo 'SOAP UI tests'
+        sh "sleep 10s"
+      }
+    )
+
+  stage 'QA Tests'
+    echo 'QA Tests'
+    sh "sleep 4s"
+
+  stage 'Release Transports'
+    echo 'Releasing Transports'
+    sh "sleep 2s"
+
+  stage 'L1 Approval'
+    input 'Ready to go?'
+    sh "sleep 2s"
+
+  stage 'L2 Approval'
+    sh "sleep 2s"
+
+  stage 'Deployed to SIT1'
+    echo 'Transports moving to SIT1'
+    sh "sleep 2s"
+
+  stage 'QA Tests'
+    echo 'QA Tests'
+    sh "sleep 4s"
+
+}
