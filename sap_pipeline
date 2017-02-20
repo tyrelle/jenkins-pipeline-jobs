@@ -15,6 +15,7 @@ node ('local-mac'){
       //  def example = load "${rootDir}/groovy-scripts/test.groovy"
       //  example.testOutput()
         echo "from pipeline = " + ret
+        echo "from pipeline status = " + ret.status
       },
       "SOAP UI Tests": {
         echo 'SOAP UI tests'
