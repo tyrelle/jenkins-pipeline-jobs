@@ -12,7 +12,7 @@ node ('local-mac'){
         checkout scm
         def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStdout: true)
         println ret
-        if (ret=='failed')
+        if (ret==failed)
           currentBuild.result = 'FAILURE'
       },
       "SOAP UI Tests": {
