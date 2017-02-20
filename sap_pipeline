@@ -13,7 +13,6 @@ node ('local-mac'){
         def returnCode = sh(script: 'groovy groovy-scripts/test.groovy', returnStatus: true)
         if (returnCode==1)
         {
-          //sh "exit 1"
           error(message : "eCatt tests failed")
         }
 
