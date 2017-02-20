@@ -8,7 +8,8 @@ node {
     parallel (
       "eCatt Tests": {
         echo 'eCatt tests'
-        sh "cd /Users/tyrelle/apps/jenkins-pipeline-jobs/groovy-scripts"
+        git url: 'http://tyrelle.chetty@stash.standardbank.co.za:7990/scm/cbdev/jenkins-pipeline-jobs.git'
+        sh "cd groovy-scripts"
         sh "groovy test.groovy"
       },
       "SOAP UI Tests": {
