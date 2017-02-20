@@ -32,7 +32,7 @@ node ('local-mac'){
     sh "sleep 2s"
 
   stage 'L1 Approval'
-  {
+  step{
     def ok = true
     while (ok)
     {
