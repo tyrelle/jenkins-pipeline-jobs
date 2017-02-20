@@ -14,7 +14,8 @@ node ('local-mac'){
         if (returnCode==1)
         {
           echo "eCatt Unit tests have failed"
-          sh "exit 1"
+          //sh "exit 1"
+          throw err
         }
 
       },
