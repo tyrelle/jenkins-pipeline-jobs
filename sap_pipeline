@@ -15,7 +15,8 @@ node ('local-mac'){
         {
           echo "eCatt Unit tests have failed"
           //sh "exit 1"
-          throw err
+          currentBuild.result = 'FAILURE'
+          return
         }
 
       },
