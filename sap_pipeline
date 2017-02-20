@@ -25,14 +25,14 @@ node ('local-mac'){
 
   stage 'QA Tests'
     echo 'QA Tests'
-    sh "sleep 4s"
+    sh "sleep 1s"
 
   stage 'Release Transports'
     echo 'Releasing Transports'
     sh "sleep 2s"
 
   stage 'L1 Approval'
-    input 'Give L1 Approvals?'
+    input (message:'Give L1 Approvals?')
     sh "sleep 2s"
 
   stage 'L2 Approval'
