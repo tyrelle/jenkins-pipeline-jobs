@@ -12,7 +12,7 @@ node ('local-mac'){
         checkout scm
         def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStdout: true)
         println ret
-        if ($ret=='failed')
+        if (ret=='failed')
         {
           currentBuild.result = 'FAILURE'
           echo "RESULT: ${currentBuild.result}"
@@ -20,7 +20,7 @@ node ('local-mac'){
       },
       "SOAP UI Tests": {
         echo 'SOAP UI tests'
-        sh "sleep 10s"
+        sh "sleep 1s"
       }
     )
 
