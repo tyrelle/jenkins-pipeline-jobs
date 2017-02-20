@@ -10,6 +10,7 @@ node ('local-mac'){
       "eCatt Tests": {
         echo 'eCatt tests'
         git url: 'http://tyrelle.chetty@stash.standardbank.co.za:7990/scm/cbdev/jenkins-pipeline-jobs.git'
+        checkout scm
         sh "cd groovy-scripts"
         sh "groovy test.groovy"
       },
