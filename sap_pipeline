@@ -8,7 +8,8 @@ node {
     parallel (
       "eCatt Tests": {
         echo 'eCatt tests'
-        sh "sleep 5s"
+        sh "cd /Users/tyrelle/apps/jenkins-pipeline-jobs/groovy-scripts"
+        sh "groovy test.groovy"
       },
       "SOAP UI Tests": {
         echo 'SOAP UI tests'
