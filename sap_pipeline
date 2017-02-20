@@ -14,7 +14,7 @@ node ('local-mac'){
         if (returnCode==1)
         {
           //sh "exit 1"
-          throw new Exception(message : "eCatt tests failed")
+          error(message : "eCatt tests failed")
         }
 
       },
