@@ -28,3 +28,4 @@ def test_out = [
 
 //println "output = " + wine_resp.overallStatus
 println test_out
+exit=1
