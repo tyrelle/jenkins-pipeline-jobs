@@ -32,14 +32,23 @@ node ('local-mac'){
     sh "sleep 2s"
 
   stage 'L1 Approval'
-    def userInputL1 = input(
-           id: 'userInput', message: 'Please provide L1 Approval?', parameters: [
-           [$class: 'hudson.model.StringParameterDefinition', description: 'Username', name: 'Username'],
-           [$class: 'hudson.model.PasswordParameterDefinition', name: 'Password']
-          ])
-    echo ("Username: "+userInputL1['Username'])
-    echo ("Password: "+userInputL1['Password'])
-    sh "sleep 2s"
+    def ok = true
+    while (ok)
+    {
+        def userInputL1 = input(
+               id: 'userInput', message: 'Please provide L1 Approval?', parameters: [
+               [$class: 'hudson.model.StringParameterDefinition', description: 'Username', name: 'Username'],
+               [$class: 'hudson.model.PasswordParameterDefinition', name: 'Password']
+              ])
+        echo ("Username: "+userInputL1['Username'])
+        echo ("Password: "+userInputL1['Password'])
+        sh "sleep 2s"
+
+        if (userInputL1['Username']=="tyrelle")
+        {
+          ok = false
+        }
+      }
 
   stage 'L2 Approval'
   def userInputL2 = input(
