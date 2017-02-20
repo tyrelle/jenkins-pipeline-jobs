@@ -17,5 +17,6 @@ def wine_resp = url.openConnection().with {
     new JsonSlurper().parse(inputStream.newReader("UTF-8"))
 }
 
-println "output = " + wine_resp.overallStatus
+//println "output = " + wine_resp.overallStatus
+println "output = FAILED"
 exit=1
