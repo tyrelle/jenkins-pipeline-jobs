@@ -1,7 +1,7 @@
 node ('local-mac'){
   stage 'Build'
       echo 'Reading config files'
-      sh 'sleep 5s'
+      sh 'sleep 1s'
 
 
   stage 'Unit Tests'
@@ -12,7 +12,11 @@ node ('local-mac'){
         checkout scm
         def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStdout: true)
         println ret
-        echo "RESULT: ${currentBuild.result}"
+        if ($ret=='failed')
+        {
+          currentBuild.result = 'FAILURE'
+          echo "RESULT: ${currentBuild.result}"
+        }
       },
       "SOAP UI Tests": {
         echo 'SOAP UI tests'
