@@ -32,7 +32,13 @@ node ('local-mac'){
     sh "sleep 2s"
 
   stage 'L1 Approval'
-    input (message:'Give L1 Approvals?')
+    def userInput = input(
+           id: 'userInput', message: 'Let\'s promote?', parameters: [
+           [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env'],
+           [$class: 'TextParameterDefinition', defaultValue: 'uat1', description: 'Target', name: 'target']
+          ])
+    echo ("Env: "+userInput['env'])
+    echo ("Target: "+userInput['target'])
     sh "sleep 2s"
 
   stage 'L2 Approval'
