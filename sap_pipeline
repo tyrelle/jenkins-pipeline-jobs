@@ -11,7 +11,7 @@ node ('local-mac'){
         git url: 'http://tyrelle.chetty@stash.standardbank.co.za:7990/scm/cbdev/jenkins-pipeline-jobs.git', branch: 'master'
         checkout scm
         def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStdout: true)
-        println ret
+        echo ret
         if (ret='failed')
         {
           currentBuild.result = 'FAILURE'
