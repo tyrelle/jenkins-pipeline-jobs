@@ -22,6 +22,7 @@ def test_out = [
   featureTeam : "SANITY",
   username : "AO_USR",
   password : "Supp0rt!"
+  status : "failed"
 ]
 
 //println "output = " + wine_resp.overallStatus
