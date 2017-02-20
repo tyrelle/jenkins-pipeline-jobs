@@ -25,7 +25,9 @@ def test_out = [
   password : "Supp0rt!",
   status : "failed"
 ]
+def status = "failed"
 
 //println "output = " + wine_resp.overallStatus
 println test_out
+println status
 exit=1
