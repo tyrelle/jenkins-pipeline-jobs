@@ -25,10 +25,11 @@ node {
     sh "sleep 2s"
 
   stage 'L1 Approval'
-    input 'Ready to go?'
+    input 'Give L1 Approvals?'
     sh "sleep 2s"
 
   stage 'L2 Approval'
+    input 'Give L2 Approvals?'
     sh "sleep 2s"
 
   stage 'Deployed to SIT1'
@@ -38,5 +39,4 @@ node {
   stage 'QA Tests'
     echo 'QA Tests'
     sh "sleep 4s"
-
 }
