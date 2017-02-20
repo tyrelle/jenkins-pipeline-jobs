@@ -10,11 +10,13 @@ node ('local-mac'){
         echo 'eCatt tests'
         git url: 'https://github.com/tyrelle/jenkins-pipeline-jobs.git', branch: 'master'
         checkout scm
-        def rootDir = pwd()
         def returnCode = sh(script: 'groovy groovy-scripts/test.groovy', returnStatus: true)
         if (returnCode==1)
+        {
+          echo "eCatt Unit tests have failed"
           sh "exit 1"
-        echo "RESULT: ${currentBuild.result}"
+        }
+
       },
       "SOAP UI Tests": {
         echo 'SOAP UI tests'
