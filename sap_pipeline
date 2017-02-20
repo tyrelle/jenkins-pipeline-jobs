@@ -33,7 +33,7 @@ node ('local-mac'){
 
   stage 'L1 Approval'
     def ok = true
-    while (ok)
+    waitUntil
     {
         def userInputL1 = input(
                id: 'userInput', message: 'Please provide L1 Approval?', parameters: [
@@ -46,7 +46,7 @@ node ('local-mac'){
 
         if (userInputL1['Username']=="tyrelle")
         {
-          ok = false
+          return true
         }
       }
 
