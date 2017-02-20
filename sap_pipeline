@@ -1,10 +1,11 @@
-local-mac {
+node {
   stage 'Build'
       echo 'Reading config files'
       sh 'sleep 5s'
 
 
   stage 'Unit Tests'
+  agent local-mac
     parallel (
       "eCatt Tests": {
         echo 'eCatt tests'
