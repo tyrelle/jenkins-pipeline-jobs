@@ -17,17 +17,10 @@ def wine_resp = url.openConnection().with {
     new JsonSlurper().parse(inputStream.newReader("UTF-8"))
 }
 
-
-def test_out = [
-  pathToYMLFile : "http://stash.standardbank.co.za:7990/projects/CBDEV/repos/feature-team-config/raw/sanity-config.yml",
-  featureTeam : "SANITY",
-  username : "AO_USR",
-  password : "Supp0rt!",
-  status : "failed"
-]
 def status = "failed"
 
 //println "output = " + wine_resp.overallStatus
-println test_out
-println status
-System.exit(1)
+if (status=='failed')
+  System.exit(1)
+else
+  System.exit(0)
