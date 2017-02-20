@@ -32,6 +32,7 @@ node ('local-mac'){
     sh "sleep 2s"
 
   stage 'L1 Approval'
+  {
     def ok = true
     while (ok)
     {
@@ -49,6 +50,7 @@ node ('local-mac'){
           ok = false
         }
       }
+    }
 
   stage 'L2 Approval'
   def userInputL2 = input(
