@@ -11,7 +11,7 @@ node ('local-mac'){
         git url: 'https://github.com/tyrelle/jenkins-pipeline-jobs.git', branch: 'master'
         checkout scm
         def rootDir = pwd()
-        def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStatus: true)
+        def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStdout: true)
       //  def example = load "${rootDir}/groovy-scripts/test.groovy"
       //  example.testOutput()
         echo "from pipeline = " + ret
