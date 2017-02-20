@@ -33,16 +33,20 @@ node ('local-mac'){
 
   stage 'L1 Approval'
     def userInput = input(
-           id: 'userInput', message: 'Let\'s promote?', parameters: [
+           id: 'userInput', message: 'Please provide L1 Approval?', parameters: [
            [$class: 'hudson.model.StringParameterDefinition', description: 'Username', name: 'Username'],
            [$class: 'hudson.model.PasswordParameterDefinition', name: 'Password']
           ])
-    echo ("Env: "+userInput['env'])
-    echo ("Target: "+userInput['target'])
+  //  echo ("Env: "+userInput['env'])
+  //  echo ("Target: "+userInput['target'])
     sh "sleep 2s"
 
   stage 'L2 Approval'
-    input 'Give L2 Approvals?'
+  def userInput = input(
+         id: 'userInput', message: 'Please provide L2 Approval?', parameters: [
+         [$class: 'hudson.model.StringParameterDefinition', description: 'Username', name: 'Username'],
+         [$class: 'hudson.model.PasswordParameterDefinition', name: 'Password']
+        ])
     sh "sleep 2s"
 
   stage 'Deployed to SIT1'
