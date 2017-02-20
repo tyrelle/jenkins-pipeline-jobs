@@ -13,7 +13,7 @@ node ('local-mac'){
         def rootDir = pwd()
         def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStatus: true)
       //  def example = load "${rootDir}/groovy-scripts/test.groovy"
-        example.testOutput()
+      //  example.testOutput()
         echo "from pipeline = " + ret
       },
       "SOAP UI Tests": {
