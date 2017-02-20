@@ -8,10 +8,10 @@ node ('local-mac'){
     parallel (
       "eCatt Tests": {
         echo 'eCatt tests'
-        git url: 'http://tyrelle.chetty@stash.standardbank.co.za:7990/scm/cbdev/jenkins-pipeline-jobs.git', branch: 'master'
+        git url: 'https://github.com/tyrelle/jenkins-pipeline-jobs.git', branch: 'master'
         checkout scm
         def ret = sh(script: 'groovy groovy-scripts/test.groovy', returnStdout: true)
-        echo $ret
+        println ret
         if (ret='failed')
         {
           currentBuild.result = 'FAILURE'
