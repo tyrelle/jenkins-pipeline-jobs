@@ -28,6 +28,7 @@ node ('local-mac'){
     sh "sleep 1s"
 
   stage 'Release Transports'
+  com.eviware.soapui.support.UISupport.showInfoMessage('This is a popup message')
     echo 'Releasing Transports'
     sh "sleep 2s"
 
