@@ -28,22 +28,21 @@ node ('local-mac'){
     sh "sleep 1s"
 
   stage 'Release Transports'
-  com.eviware.soapui.support.UISupport.showInfoMessage('This is a popup message')
     echo 'Releasing Transports'
     sh "sleep 2s"
 
   stage 'L1 Approval'
-    def userInput = input(
+    def userInputL1 = input(
            id: 'userInput', message: 'Please provide L1 Approval?', parameters: [
            [$class: 'hudson.model.StringParameterDefinition', description: 'Username', name: 'Username'],
            [$class: 'hudson.model.PasswordParameterDefinition', name: 'Password']
           ])
-  //  echo ("Env: "+userInput['env'])
-  //  echo ("Target: "+userInput['target'])
+    echo ("Username: "+userInputL1['Username'])
+    echo ("Password: "+userInputL1['Password'])
     sh "sleep 2s"
 
   stage 'L2 Approval'
-  def userInput = input(
+  def userInputL2 = input(
          id: 'userInput', message: 'Please provide L2 Approval?', parameters: [
          [$class: 'hudson.model.StringParameterDefinition', description: 'Username', name: 'Username'],
          [$class: 'hudson.model.PasswordParameterDefinition', name: 'Password']
