@@ -18,3 +18,4 @@ def wine_resp = url.openConnection().with {
 }
 
 println "output = " + wine_resp.overallStatus
+exit=1
