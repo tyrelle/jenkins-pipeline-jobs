@@ -1,4 +1,4 @@
-node {
+node ('local-mac'){
   stage 'Build'
       echo 'Reading config files'
       sh 'sleep 5s'
