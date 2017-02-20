@@ -30,4 +30,4 @@ def status = "failed"
 //println "output = " + wine_resp.overallStatus
 println test_out
 println status
-exit=1
+System.exit(1)
