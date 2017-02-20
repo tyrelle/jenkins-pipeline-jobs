@@ -34,8 +34,8 @@ node ('local-mac'){
   stage 'L1 Approval'
     def userInput = input(
            id: 'userInput', message: 'Let\'s promote?', parameters: [
-           [$class: 'hudson.model.StringParameterDefinition', description: 'Please enter username', name: 'Username'],
-           [$class: 'hudson.model.PasswordParameterDefinition', description: 'Please enter password', name: 'Password']
+           [$class: 'hudson.model.StringParameterDefinition', description: 'Username', name: 'Username'],
+           [$class: 'hudson.model.PasswordParameterDefinition', name: 'Password']
           ])
     echo ("Env: "+userInput['env'])
     echo ("Target: "+userInput['target'])
